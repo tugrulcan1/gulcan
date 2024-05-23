@@ -100,7 +100,7 @@
             }
         ]
     },
-  
+
     {
         "id": "housing",
         "label": "Uygulama",
@@ -222,7 +222,7 @@
             }
         ]
     },
-   
+
     {
         "id": "social_media_icons",
         "label": "Yönetim",
@@ -334,27 +334,10 @@
                 "activePath": "admin/uruns/create"
             },
             {
-                "text": "Listele",
-                "key": "GetUruns",
-                "url": "admin.uruns.index",
-                "activePath": "admin/uruns"
-            }
-        ]
-    },
-     {
-        "id": "uruns",
-        "label": "Yönetim",
-        "icon": "instagram",
-        "text": "Ürünler",
-        "key": "Uruns",
-        "url": "#nv-uruns",
-        "activePath": "admin/uruns*",
-        "subMenu": [
-            {
-                "text": "Oluştur",
+                "text": "Rafa Stok Ekle",
                 "key": "CreateUrun",
-                "url": "admin.uruns.create",
-                "activePath": "admin/uruns/create"
+                "url": "admin.uruns.stockStore",
+                "activePath": "admin/urun-stok-ekle"
             },
             {
                 "text": "Listele",

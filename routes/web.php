@@ -39,6 +39,7 @@ use App\Http\Controllers\Institutional\DashboardController;
 use App\Http\Controllers\Institutional\LoginController;
 use App\Http\Controllers\Institutional\ProfileController as InstitutionalProfileController;
 use App\Http\Controllers\Institutional\ProjectController as InstitutionalProjectController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RafController;
 use App\Http\Controllers\SutunController;
 use App\Http\Controllers\UrunController;
@@ -57,6 +58,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, "index"])->name('index');
 Route::get('/admin', [AdminHomeController::class, "index"]);
+Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+
 Route::get('/housing/{id}', [ClientHousingController::class, "show"])->name('housing.show');
 Route::get('/admin', [AdminHomeController::class, "index"]);
 Route::get('/project/{slug}', [ClientProjectController::class, "index"])->name('project.detail');
@@ -81,6 +84,7 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show')
 
 Route::group(['prefix' => 'admin', "as" => "admin.", 'middleware' => ['admin']], function () {
     Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])->name('blogs.destroy');
+    Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
 
     Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
     Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store');
@@ -137,15 +141,13 @@ Route::group(['prefix' => 'admin', "as" => "admin.", 'middleware' => ['admin']],
     //////////////////////////////////////////////////////////////////
 
     Route::delete('/uruns/{urun}', [UrunController::class, 'destroy'])->name('uruns.destroy');
-
     Route::get('/uruns/create', [UrunController::class, 'create'])->name('uruns.create');
     Route::post('/uruns', [UrunController::class, 'store'])->name('uruns.store');
-
     Route::get('/uruns/{urun}/edit', [UrunController::class, 'edit'])->name('uruns.edit');
-
     Route::put('/uruns/{urun}', [UrunController::class, 'update'])->name('uruns.update');
-
     Route::get('/uruns', [UrunController::class, 'index'])->name('uruns.index');
+    Route::get('/urun-stok-ekle', [UrunController::class, 'stockStore'])->name('uruns.stockStore');
+    Route::post('/urun-stok-ekle', [UrunController::class, 'stockStorePost'])->name('uruns.stockStorePost');
 
     Route::get('info/contact', [InfoController::class, 'contact'])->name('info.contact.index');
     Route::post('info/setContact', [InfoController::class, 'contactSetOrEdit'])->name('info.contact.set');
