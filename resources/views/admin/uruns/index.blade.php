@@ -43,16 +43,8 @@
                                             data-sort="projectName" style="width:20%;">Ürün Stok</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Ürün Adet Sayısı</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Ürün Raf_id</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Ürün Sütun_id</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Ürün Bölme_id</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Ürün Kullancı_id</th>
                                         <th>İŞLEMLER</th>
-                                     
+
                                     </tr>
                                 </thead>
                                 <tbody class="list" id="project-list-table-body">
@@ -62,10 +54,6 @@
                                             <td>{{ $urun->name }}</td>
                                             <td>{{ $urun->stock }}</td>
                                             <td>{{ $urun->number_unit }}</td>
-                                            <td>{{ $urun->raf->name }}</td>
-                                            <td>{{ $urun->sutun->name }}</td>
-                                            <td>{{ $urun->bolum->name }}</td>
-                                            <td>{{ $urun->user_id }}</td>
 
                                             <td>
                                                 @if (in_array('GetUrunById', $userPermissions) && in_array('UpdateUrun', $userPermissions))
@@ -132,7 +120,7 @@
                                                 <!-- Silme işlemi için modal -->
                                             </td>
 
-                                         
+
                                         </tr>
                                     @endforeach
                                 </tbody>

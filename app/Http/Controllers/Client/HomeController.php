@@ -11,16 +11,16 @@ use App\Models\Project;
 use App\Models\StandOutUser;
 use Illuminate\Http\Request;
 use App\Models\Blog;
-
-
+use App\Models\Urun;
 
 class HomeController extends Controller
 {
     public function index()
     {
-      
+
         $blogs = Blog::orderBy("id" , "desc")->limit(3)->get();
-       
-        return view('client.home.index', compact('blogs'));
+        $uruns = Urun::all();
+
+        return view('client.home.index', compact('blogs',"uruns"));
     }
 }

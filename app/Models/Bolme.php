@@ -14,7 +14,7 @@ class Bolme extends Model
     }
     public function uruns()
     {
-        return $this->hasMany(Urun::class, "bolme_id", "id");
+        return $this->hasMany(UrunPlace::class, "bolme_id", "id");
     }
     protected $table = 'bolmes'; // Modeli 'blogs' tablosuyla ilişkilendir
 
