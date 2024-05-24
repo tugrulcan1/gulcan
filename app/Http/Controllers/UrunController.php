@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bolme;
+use App\Models\Personel;
 use App\Models\Raf;
 use App\Models\Urun;
 use App\Models\UrunPlace;
@@ -49,7 +50,7 @@ class UrunController extends Controller
         $urun->username = $request->username;
         $urun->save();
 
-        return redirect()->back()->with('success', 'Product created successfully.');
+        return redirect()->back()->with('success', 'İşlem Başarılı');
     }
 
     public function show(Urun $urun)
@@ -60,9 +61,10 @@ class UrunController extends Controller
     public function stockStore()
     {
         $uruns = Urun::all();
+        $personels = Personel::all();
         $rafs = Raf::all();
 
-        return view('admin.uruns.stock_store', compact("uruns","rafs"));
+        return view('admin.uruns.stock_store', compact("uruns","rafs","personels"));
     }
     public function asd()
     {

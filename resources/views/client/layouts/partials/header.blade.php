@@ -90,7 +90,7 @@
             <div class="outer-box clearfix">
                 <div class="header-top_left pull-left">
                     <div class="text">
-                        <p>Immediate Delivery</p>
+                        <p>İletişime Geç =></p>
                     </div>
                     <div class="header-contact-info1">
                         <ul>
@@ -99,14 +99,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="header-top_right pull-right">
-                    <div class="header-mail-box">
-                        <span class="icon-email"></span>
-                        <p>Enquire? <a href="mailto:info@example.com">Send Your Mail</a></p>
-                    </div>
-                    <div class="space-box1"></div>
-                  
-                </div>
+               
 
             </div>
         </div>    
@@ -118,7 +111,7 @@
             <div class="outer-box">
                 <div class="header-left">
                     <div class="logo">
-                        <a href="index-2.html"><img src="assets/images/resources/logo.png" alt="Awesome Logo" title=""></a>
+                        <a href="index-2.html"><img src="assets/images/resources/buzdagılogo.png" alt="Awesome Logo" title=""></a>
                     </div>
                 </div>
 
@@ -139,14 +132,7 @@
                     
                  
                   
-                    <div class="header-right_buttom">
-                        <div class="btns-box">
-                            <a class="btn-one" href="contact.html">
-                                <div class="round"></div>
-                                <span class="txt">Order Now</span>
-                            </a>
-                        </div>
-                    </div> 
+                
 
                 </div> 
             </div>

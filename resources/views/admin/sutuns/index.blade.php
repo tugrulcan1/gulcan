@@ -40,11 +40,7 @@
                                         <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Sütun İsim</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Sütun Stok</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Sütun Kapasite</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Sütun Boş Alan</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Sütun Bölme Sayısı</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
@@ -58,9 +54,7 @@
                                         <tr class="position-static">
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $sutun->name }}</td>
-                                            <td>{{ $sutun->stock }}</td>
                                             <td>{{ $sutun->capacity }}</td>
-                                            <td>{{ $sutun->empty_space }}</td>
                                             <td>{{ $sutun->section_number }}</td>
                                             <td>{{ $sutun->raf_id }}</td>
 

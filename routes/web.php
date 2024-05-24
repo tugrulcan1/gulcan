@@ -40,7 +40,9 @@ use App\Http\Controllers\Institutional\LoginController;
 use App\Http\Controllers\Institutional\ProfileController as InstitutionalProfileController;
 use App\Http\Controllers\Institutional\ProjectController as InstitutionalProjectController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PersonelController;
 use App\Http\Controllers\RafController;
+use App\Http\Controllers\SiparisController;
 use App\Http\Controllers\SutunController;
 use App\Http\Controllers\UrunController;
 use Illuminate\Support\Facades\Route;
@@ -82,6 +84,7 @@ Route::post('/register', [RegisterController::class, "register"])->name('client.
 Route::get('/logout', [ClientLoginController::class, "logout"])->name('client.logout');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 
+
 Route::group(['prefix' => 'admin', "as" => "admin.", 'middleware' => ['admin']], function () {
     Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])->name('blogs.destroy');
     Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
@@ -94,6 +97,26 @@ Route::group(['prefix' => 'admin', "as" => "admin.", 'middleware' => ['admin']],
     Route::put('/blogs/{blog}', [BlogController::class, 'update'])->name('blogs.update');
 
     Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+
+    Route::get('/siparises', [SiparisController::class, 'index'])->name('siparises.index');
+
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+
+
+
+
+    ////////////////////////////////////////
+
+
+
+    Route::delete('/personels/{personel}', [PersonelController::class, 'destroy'])->name('personels.destroy');
+    Route::get('/personels/create', [PersonelController::class, 'create'])->name('personels.create');
+    Route::post('/personels', [PersonelController::class, 'store'])->name('personels.store');
+    Route::get('/personels/{personel}/edit', [PersonelController::class, 'edit'])->name('personels.edit');
+    Route::put('/personels/{personel}', [PersonelController::class, 'update'])->name('personels.update');
+    Route::get('/personels', [PersonelController::class, 'index'])->name('personels.index');
+
+
 
     /////////////////////////////////////////////////////////////
 
@@ -120,6 +143,9 @@ Route::group(['prefix' => 'admin', "as" => "admin.", 'middleware' => ['admin']],
     Route::put('/sutuns/{sutun}', [SutunController::class, 'update'])->name('sutuns.update');
 
     Route::get('/sutuns', [SutunController::class, 'index'])->name('sutuns.index');
+
+  
+
 
     //////////////////////////////////////////////////////////////////
 

@@ -474,7 +474,6 @@ li{
 }
 .owl-nav-style-one.owl-theme .owl-nav {
     position: relative;
-    display: block;
     line-height: 0;
     z-index: 10;
 }

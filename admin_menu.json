@@ -1,13 +1,5 @@
 [
-    {
-        "id": "menu",
-        "label": "Yönetim",
-        "icon": "menu",
-        "text": "Menü",
-        "key": "Menus",
-        "url": "admin.menu_management",
-        "activePath": "admin/menus*"
-    },
+  
     {
         "id": "role",
         "label": "Yönetim",
@@ -31,29 +23,7 @@
             }
         ]
     },
-    {
-        "id": "page",
-        "label": "Yönetim",
-        "icon": "file",
-        "text": "Sayfalar",
-        "key": "Pages",
-        "url": "#nv-page",
-        "activePath": "admin/pages*",
-        "subMenu": [
-            {
-                "text": "Oluştur",
-                "key": "CreatePage",
-                "url": "admin.pages.create",
-                "activePath": "admin/pages/create"
-            },
-            {
-                "text": "Listele",
-                "key": "GetPages",
-                "url": "admin.pages.index",
-                "activePath": "admin/pages"
-            }
-        ]
-    },
+   
     {
         "id": "permission_group",
         "label": "Yönetim",
@@ -250,7 +220,7 @@
     {
         "id": "rafs",
         "label": "Yönetim",
-        "icon": "instagram",
+        "icon": "file",
         "text": "Bloklar",
         "key": "Rafs",
         "url": "#nv-rafs",
@@ -274,7 +244,7 @@
     {
         "id": "sutuns",
         "label": "Yönetim",
-        "icon": "instagram",
+        "icon": "file",
         "text": "Sütunlar",
         "key": "Sutuns",
         "url": "#nv-sutuns",
@@ -298,7 +268,7 @@
     {
         "id": "bolmes",
         "label": "Yönetim",
-        "icon": "instagram",
+        "icon": "file",
         "text": "Bölmeler",
         "key": "Bolmes",
         "url": "#nv-bolmes",
@@ -321,7 +291,7 @@
     {
         "id": "uruns",
         "label": "Yönetim",
-        "icon": "instagram",
+        "icon": "file",
         "text": "Ürünler",
         "key": "Uruns",
         "url": "#nv-uruns",
@@ -344,6 +314,68 @@
                 "key": "GetUruns",
                 "url": "admin.uruns.index",
                 "activePath": "admin/uruns"
+            }
+         
+        ]
+    },
+    {
+        "id": "siparises",
+        "label": "Yönetim",
+        "icon": "file",
+        "text": "Sipariş Ver",
+        "key": "Siparises",
+        "url": "#nv-siparises",
+        "activePath": "admin/siparises*",
+        "subMenu": [
+          
+            {
+                "text": "Sipariş Ver",
+                "key": "GetSiparises",
+                "url": "admin.siparises.index",
+                "activePath": "admin/siparises"
+            }
+         
+        ]
+    },
+    {
+        "id": "personels",
+        "label": "Yönetim",
+        "icon": "user",
+        "text": "Personeller",
+        "key": "Personels",
+        "url": "#nv-personels",
+        "activePath": "admin/personels*",
+        "subMenu": [
+            {
+                "text": "Oluştur",
+                "key": "CreatePersonel",
+                "url": "admin.personels.create",
+                "activePath": "admin/personels/create"
+            },
+            {
+                "text": "Listele",
+                "key": "GetPersonels",
+                "url": "admin.personels.index",
+                "activePath": "admin/personels"
+            }
+        ]
+    },
+
+
+    {
+        "id": "orders",
+        "label": "Yönetim",
+        "icon": "user",
+        "text": "Giden Siparişler",
+        "key": "Orders",
+        "url": "#nv-orders",
+        "activePath": "admin/orders*",
+        "subMenu": [
+            {
+                "text": "Listele",
+                "key": "GetOrders",
+                "url": "admin.orders.index",
+                "activePath": "admin/orders"
             }
         ]
     }

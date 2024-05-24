@@ -13,7 +13,19 @@
                 </div>
                 <div class="card-body p-0">
 
+            
                     <div class="p-4 code-to-copy">
+                    @if (session('success'))
+                        <div class="alert alert-success text-white">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('error'))
+                        <div class="alert alert-danger text-white">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                         <form action="{{ route('admin.uruns.stockStorePost') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
@@ -73,13 +85,20 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="username">Personel Adı</label>
-                                <input class="form-control @error('username') is-invalid @enderror" id="username" name="username" type="text"
-                                    placeholder="Personel Adı" value="{{ old('username') }}">
-                                @error('username')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+    <label class="form-label" for="username">Personel Adı</label>
+    <select class="form-select @error('username') is-invalid @enderror" id="username" name="username">
+        <option value="">Personel Seçin</option>
+        @foreach ($personels as $personel)
+        <option value="{{$personel->id}}" @if(old('username') == 'ali') selected @endif>{{$personel->username}}</option>
+        @endforeach
+        
+        
+    </select>
+    
+    @error('username')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
                             <button type="submit" class="btn btn-primary">Oluştur</button>
                         </form>
                     </div>

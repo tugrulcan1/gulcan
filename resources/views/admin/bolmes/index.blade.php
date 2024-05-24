@@ -38,15 +38,9 @@
                                     <tr>
                                         <th style="width:15%;">ID</th>
                                         <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Bölme İsim</th>
+                                            data-sort="projectName" style="width:20%;">Bölme İsim</th>                                         
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Bölme Stok</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Bölme Kapasite</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Bölme Boş Alan</th>
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Bölme Ürün Sayısı</th>
+                                            data-sort="projectName" style="width:20%;">Bölme Kapasite</th>                                         
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Bölme Sütun İd</th>
                                         <th>İŞLEMLER</th>
@@ -58,9 +52,7 @@
                                         <tr class="position-static">
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $bolme->name }}</td>
-                                            <td>{{ $bolme->stock }}</td>
                                             <td>{{ $bolme->capacity }}</td>
-                                            <td>{{ $bolme->empty_space }}</td>
                                             <td>{{ $bolme->product_number }}</td>
                                             <td>{{ $bolme->sutun_id }}</td>
 

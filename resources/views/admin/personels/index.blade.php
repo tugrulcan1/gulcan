@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <div id="projectSummary"
-                    data-list='{"valueNames":["projectName","assigness","start","deadline","task","projectprogress","status","action"],"raf":12,"pagination":true}'>
+                    data-list='{"valueNames":["projectName","assigness","start","deadline","task","projectprogress","status","action"],"personel":12,"pagination":true}'>
                     <div class="row justify-content-between mb-4 gx-6 gy-3 align-items-center">
                         <div class="col-auto">
-                            <h2 class="mb-0">Sayfalar<span class="fw-normal text-700 ms-3">({{ count($rafs) }})</span>
+                            <h2 class="mb-0">Sayfalar<span class="fw-normal text-700 ms-3">({{ count($personels) }})</span>
                             </h2>
                         </div>
                         <div class="col-auto">
                             <div class="col-auto">
-                                <a class="btn btn-primary px-5" href="{{ route('admin.rafs.create') }}">
+                                <a class="btn btn-primary px-5" href="{{ route('admin.personels.create') }}">
                                     <i class="fa-solid fa-plus me-2"></i>Yeni Ekle
                                 </a>
                             </div>
@@ -38,35 +38,33 @@
                                     <tr>
                                         <th style="width:15%;">ID</th>
                                         <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Blok İsim</th>
+                                            data-sort="projectName" style="width:20%;">Personel İsim Soyisim</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Blok Stok</th>                                        
-                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Blok Sütun Sayısı</th>
+                                            data-sort="projectName" style="width:20%;">Personel Ünvan</th>
+                                            
                                         <th>İŞLEMLER</th>
                                      
                                     </tr>
                                 </thead>
                                 <tbody class="list" id="project-list-table-body">
-                                    @foreach ($rafs as $key => $raf)
+                                    @foreach ($personels as $key => $personel)
                                         <tr class="position-static">
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $raf->name }}</td>
-                                            <td>{{ $raf->capacity }}</td>
-                                            <td>{{ $raf->column_number }}</td>
+                                            <td>{{ $personel->username }}</td>
+                                            <td>{{ $personel->title }}</td>
                                             <td>
-                                                @if (in_array('GetRafById', $userPermissions) && in_array('UpdateRaf', $userPermissions))
-                                                    <a href="{{ route('admin.rafs.edit', $raf->id) }}"
+                                                @if (in_array('GetPersonelById', $userPermissions) && in_array('UpdatePersonel', $userPermissions))
+                                                    <a href="{{ route('admin.personels.edit', $personel->id) }}"
                                                         class="btn btn-sm btn-primary">Güncelle</a>
-                                                @elseif (in_array('GetRafById', $userPermissions))
-                                                    <a href="{{ route('admin.rafs.edit', $raf->id) }}"
+                                                @elseif (in_array('GetPersonelById', $userPermissions))
+                                                    <a href="{{ route('admin.personels.edit', $personel->id) }}"
                                                         class="btn btn-sm btn-primary">Önizle</a>
                                                 @endif
-                                                @if (in_array('DeleteRaf', $userPermissions))
+                                                @if (in_array('DeletePersonel', $userPermissions))
                                                     <!-- Silme işlemi için modal -->
                                                     <button type="button" class="btn btn-sm btn-danger"
                                                         data-bs-toggle="modal"
-                                                        data-bs-target="#deleteModal{{ $raf->id }}">
+                                                        data-bs-target="#deleteModal{{ $personel->id }}">
                                                         Sil
                                                     </button>
                                                 @endif
@@ -75,20 +73,20 @@
 
 
                                                 <!-- Silme işlemi için modal -->
-                                                <div class="modal fade" id="deleteModal{{ $raf->id }}" tabindex="-1"
-                                                    aria-labelledby="deleteModalLabel{{ $raf->id }}"
+                                                <div class="modal fade" id="deleteModal{{ $personel->id }}" tabindex="-1"
+                                                    aria-labelledby="deleteModalLabel{{ $personel->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title"
-                                                                    id="deleteModalLabel{{ $raf->id }}">Sil
+                                                                    id="deleteModalLabel{{ $personel->id }}">Sil
                                                                 </h5>
                                                                 <button type="button" class="btn p-1"
                                                                     data-bs-dismiss="modal" aria-label="Close">
                                                                     <svg class="svg-inline--fa fa-xmark fs--1"
                                                                         aria-hidden="true" focusable="false"
-                                                                        data-prefix="fas" data-icon="xmark" raf="img"
+                                                                        data-prefix="fas" data-icon="xmark" personel="img"
                                                                         xmlns="http://www.w3.org/2000/svg"
                                                                         viewBox="0 0 320 512" data-fa-i2svg="">
                                                                         <path fill="currentColor"
@@ -103,7 +101,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <form
-                                                                    action="{{ route('admin.rafs.destroy', $raf->id) }}"
+                                                                    action="{{ route('admin.personels.destroy', $personel->id) }}"
                                                                     method="POST" class="d-inline">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -118,8 +116,6 @@
                                                 </div>
                                                 <!-- Silme işlemi için modal -->
                                             </td>
-
-                                         
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -132,9 +128,9 @@
                                     data-list-info="data-list-info">
                                 </p>
                             </div>
-                            <div class="d-flex"><button class="raf-link" data-list-pagination="prev"><span
+                            <div class="d-flex"><button class="personel-link" data-list-pagination="prev"><span
                                         class="fas fa-chevron-left"></span></button>
-                                <ul class="mb-0 pagination"></ul><button class="raf-link pe-0"
+                                <ul class="mb-0 pagination"></ul><button class="personel-link pe-0"
                                     data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
                             </div>
                         </div>

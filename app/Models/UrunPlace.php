@@ -13,5 +13,9 @@ class UrunPlace extends Model
         return $this->hasOne(Urun::class, "id","urun_id");
     }
 
+    public function personel(){
+        return $this->hasOne(Personel::class, "id","username");
+    }
+
     use HasFactory;
 }
