@@ -103,7 +103,7 @@
 
                 </div> --}}
             <div class="container mt-5">
-                <h2 class="mb-4">Raf İstatistikleri</h2>
+                <h2 class="mb-4">Blok İstatistikleri</h2>
                 <div class="row">
                     @foreach ($rafs as $raf)
                         <div class="col-md-4 mb-4">

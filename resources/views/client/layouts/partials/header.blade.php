@@ -170,7 +170,7 @@
             <!--Social Links-->
             <div class="social-links">
                 <ul class="clearfix">
-                    <li><a href="#"><span class="fab fa fa-facebook-square"></span></a></li>
+                    <li><a href="#"><span class="fab fa fa-facebook"></span></a></li>
                     <li><a href="#"><span class="fab fa fa-twitter-square"></span></a></li>
                     <li><a href="#"><span class="fab fa fa-pinterest-square"></span></a></li>
                     <li><a href="#"><span class="fab fa fa-google-plus-square"></span></a></li>

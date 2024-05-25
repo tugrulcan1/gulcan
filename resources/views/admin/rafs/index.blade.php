@@ -40,7 +40,7 @@
                                         <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Blok İsim</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
-                                            data-sort="projectName" style="width:20%;">Blok Stok</th>                                        
+                                            data-sort="projectName" style="width:20%;">Blok Kapasite</th>                                        
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Blok Sütun Sayısı</th>
                                         <th>İŞLEMLER</th>
