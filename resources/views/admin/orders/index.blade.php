@@ -40,6 +40,8 @@
                                             data-sort="projectName" style="width:20%;">Adres</th>
                                             <th class="sort white-space-nowrap align-middle ps-0" scope="col"
                                             data-sort="projectName" style="width:20%;">Telefon</th>
+                                            <th class="sort white-space-nowrap align-middle ps-0" scope="col"
+                                            data-sort="projectName" style="width:20%;">Tarih</th>
 
                                     </tr>
                                 </thead>
@@ -52,6 +54,8 @@
                                             <td>{{ $order->company_name }}</td>
                                             <td>{{ $order->address }}</td>
                                             <td>{{ $order->phone }}</td>
+                                            <td>{{ $order->created_at }}</td>
+
 
 
                                         </tr>

@@ -7,7 +7,7 @@
                 <div class="card-header border-bottom border-300 bg-soft">
                     <div class="row g-3 justify-content-between align-items-center">
                         <div class="col-12 col-md">
-                            <h4 class="text-900 mb-0" data-anchor="data-anchor" id="soft-buttons">Create raf</h4>
+                            <h4 class="text-900 mb-0" data-anchor="data-anchor" id="soft-buttons">Create Blok</h4>
                         </div>
                     </div>
                 </div>
@@ -25,33 +25,33 @@
                         <form action="{{ route('admin.rafs.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                                <label class="form-label" for="title">raf name</label>
+                                <label class="form-label" for="title">Blok name</label>
                                 <input class="form-control" id="name" name="name" type="text"
-                                    placeholder="raf Başlık">
+                                    placeholder="Blok Başlık">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="title">raf stock</label>
+                                <label class="form-label" for="title">Blok stock</label>
                                 <input class="form-control" id="name" name="stock" type="text"
-                                    placeholder="raf Başlık">
+                                    placeholder="Blok Stok">
                             </div><div class="mb-3">
-                                <label class="form-label" for="title">raf capacity</label>
+                                <label class="form-label" for="title">Blok capacity</label>
                                 <input class="form-control" id="name" name="capacity" type="text"
-                                    placeholder="raf Başlık">
+                                    placeholder="Blok Kapasite">
                             </div><div class="mb-3">
-                                <label class="form-label" for="title">raf empty_space</label>
+                                <label class="form-label" for="title">Blok empty_space</label>
                                 <input class="form-control" id="name" name="empty_space" type="text"
-                                    placeholder="raf Başlık">
+                                    placeholder="Blok Boş Alan">
                             </div><div class="mb-3">
-                                <label class="form-label" for="title">raf column_number</label>
+                                <label class="form-label" for="title">Blok column_number</label>
                                 <input class="form-control" id="name" name="column_number" type="text"
-                                    placeholder="raf Başlık">
+                                    placeholder="Blok Sütun Sayısı">
                             </div>
                            
                            
                             
 
 
-                            <button type="submit" class="btn btn-primary">Create raf</button>
+                            <button type="submit" class="btn btn-primary">Create Blok</button>
                            
                         </form>
                     </div>
