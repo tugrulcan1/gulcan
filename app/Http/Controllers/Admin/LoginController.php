@@ -13,7 +13,26 @@ class LoginController extends Controller
     {
         return view('admin.auth.login');
     }
+	
+	public function showLoginFormpersonel(){
+		return view('admin.auth.personel-login');
+	}
+	
+	 public function loginPersonel (Request $request)
+    {
+        //DB::table('users')->insert(['name' => 'test', 'email' => 'test@test.com', 'password' => Hash::make('test'), 'type' => 'admin','status'=>1]);
+        $credentials = $request->only('email', 'password');
 
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+
+                           return redirect()->intended('/admin'); // Admin paneline yönlendir
+
+        }
+
+        return redirect()->back()->withInput()->withErrors(['email' => 'Giriş başarısız. Lütfen tekrar deneyin.']);
+    }
+	
     public function login(Request $request)
     {
         //DB::table('users')->insert(['name' => 'test', 'email' => 'test@test.com', 'password' => Hash::make('test'), 'type' => 'admin','status'=>1]);

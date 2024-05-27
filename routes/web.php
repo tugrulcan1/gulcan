@@ -75,6 +75,8 @@ Route::get('cart', [CartController::class, 'index'])->name('cart');
 
 Route::get('/admin/login', [AdminLoginController::class, "showLoginForm"])->name('admin.login');
 Route::post('/admin/login', [AdminLoginController::class, "login"])->name('admin.submit.login');
+Route::get('/personel/login', [AdminLoginController::class, "showLoginFormpersonel"])->name('personel.login');
+Route::post('/personel/login', [AdminLoginController::class, "loginPersonel"])->name('personel.submit.login');
 Route::get('/admin/logout', [AdminLoginController::class, "logout"])->name('admin.logout');
 
 Route::get('/login', [ClientLoginController::class, "showLoginForm"])->name('client.login');
